@@ -39,6 +39,12 @@
             <version>4.11</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>15.0</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -111,6 +117,26 @@
                         <configuration>
                             <container>
                                 <containerId>tomcat7x</containerId>
+                            </container>
+                            <configuration>
+                                <type>standalone</type>
+                            </configuration>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>jboss6</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.cargo</groupId>
+                        <artifactId>cargo-maven2-plugin</artifactId>
+                        <version>1.4.5</version>
+                        <configuration>
+                            <container>
+                                <containerId>jboss6x</containerId>
                             </container>
                             <configuration>
                                 <type>standalone</type>
