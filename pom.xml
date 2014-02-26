@@ -18,7 +18,7 @@
 
     <contributors>
         <contributor>
-            <name>Pierre Bertrand</name>
+            <name>Funky Gono</name>
             <email>funkygono@gmail.com</email>
         </contributor>
     </contributors>
@@ -65,6 +65,14 @@
                 <groupId>org.codehaus.cargo</groupId>
                 <artifactId>cargo-maven2-plugin</artifactId>
                 <version>1.4.5</version>
+                <configuration>
+                    <container>
+                        <containerId>${containerId}</containerId>
+                    </container>
+                    <configuration>
+                        <type>standalone</type>
+                    </configuration>
+                </configuration>
                 <executions>
                     <execution>
                         <id>cargo-start</id>
@@ -107,44 +115,31 @@
 
     <profiles>
         <profile>
-            <id>tomcat7</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.codehaus.cargo</groupId>
-                        <artifactId>cargo-maven2-plugin</artifactId>
-                        <version>1.4.5</version>
-                        <configuration>
-                            <container>
-                                <containerId>tomcat7x</containerId>
-                            </container>
-                            <configuration>
-                                <type>standalone</type>
-                            </configuration>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
+            <id>jetty9x</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <containerId>jetty9x</containerId>
+            </properties>
         </profile>
         <profile>
-            <id>jboss6</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.codehaus.cargo</groupId>
-                        <artifactId>cargo-maven2-plugin</artifactId>
-                        <version>1.4.5</version>
-                        <configuration>
-                            <container>
-                                <containerId>jboss6x</containerId>
-                            </container>
-                            <configuration>
-                                <type>standalone</type>
-                            </configuration>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
+            <id>tomcat7x</id>
+            <properties>
+                <containerId>tomcat7x</containerId>
+            </properties>
+        </profile>
+        <profile>
+            <id>tomcat8</id>
+            <properties>
+                <containerId>tomcat8x</containerId>
+            </properties>
+        </profile>
+        <profile>
+            <id>jboss6x</id>
+            <properties>
+                <containerId>jboss6x</containerId>
+            </properties>
         </profile>
     </profiles>
 </project>
