@@ -115,7 +115,7 @@
 
     <profiles>
         <profile>
-            <id>jetty9x</id>
+            <id>jetty9</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
@@ -124,7 +124,7 @@
             </properties>
         </profile>
         <profile>
-            <id>tomcat7x</id>
+            <id>tomcat7</id>
             <properties>
                 <containerId>tomcat7x</containerId>
             </properties>
@@ -136,7 +136,7 @@
             </properties>
         </profile>
         <profile>
-            <id>jboss6x</id>
+            <id>jboss6</id>
             <properties>
                 <containerId>jboss6x</containerId>
             </properties>
