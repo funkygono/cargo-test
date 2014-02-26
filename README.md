@@ -14,9 +14,11 @@ the jetty9x container is used (this is the default profile).
 
 
 To launch the tests on the default profile (Jetty 9):
+
     mvn verify
 
 To launch the tests on Tomcat 7:
+
     mvn verify -Ptomcat7x
 
 You can check the available profiles to get all defined containers.
